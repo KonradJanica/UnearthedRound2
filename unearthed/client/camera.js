@@ -1,20 +1,19 @@
-var getPicture = function(opts) {
-    MeteorCamera.getPicture(opts, function(err, data) {
-        if (err) {
-            console.log('error', err);
-        }
-        if (data) {
-            Session.set('img', data)
-        }
-    });
-};
+Template.webcam.onRendered(function() {
 
-Template.cameraEvent.events({
-    'click button': function () {
-        getPicture({
-            width: 350,
-            height: 350,
-            quality: 75
+        var video = document.querySelector("#videoElement");
+
+        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+
+        if (navigator.getUserMedia) {       
+            navigator.getUserMedia({video: true}, handleVideo, videoError);
+        }
+
+        function handleVideo(stream) {
+            video.src = window.URL.createObjectURL(stream);
+        }
+
+        function videoError(e) {
+            // do something
+        }
+
         });
-    }
-});
