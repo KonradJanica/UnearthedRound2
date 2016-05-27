@@ -7,12 +7,7 @@ Template.upload.events({
         event.preventDefault();
 
         var file = $('#imageUpload').get(0).files[0];
-        fsFile = new FS.File(file);
-        fsFile.metadata = {
-            userId: Meteor.userId(),
-            tags: event.target.tag.value,
-            description: event.target.description.value,
-        }
+        var fsFile = new FS.File(file);
 
         images.insert(fsFile, function(err) {
             if (err) {

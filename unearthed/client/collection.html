@@ -1,4 +1,5 @@
 <template name="collection">
+    <div class="thumbnails">
     {{#each showImages}}
         {{#unless this.isUploaded}}
             {{> FS.UploadProgressBar bootstrap=true class='progress-bar-success progress-bar-striped active' showPercent=true}}
@@ -6,5 +7,6 @@
 
         {{> image}}
     {{/each}}
+    </div>
 
 </template>

@@ -7,26 +7,49 @@ var data = {
     datasets: [
         {
             label: "My First dataset",
-            backgroundColor: "rgba(255,99,132,0.2)",
-            borderColor: "rgba(255,99,132,1)",
-            borderWidth: 1,
-            hoverBackgroundColor: "rgba(255,99,132,0.4)",
-            hoverBorderColor: "rgba(255,99,132,1)",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
             data: [65, 59, 80, 81, 56, 55, 40],
         }
     ]
 };
 
-var options: {
-        scales: {
-                xAxes: [{
-                        stacked: true
-                }],
-                yAxes: [{
-                        stacked: true
-                }]
-            }
-        };
+    var options = {
+        //Boolean - Whether to show lines for each scale point
+        scaleShowLine: true,
+
+        //Boolean - Whether to show labels on the scale
+        scaleShowLabels: true,
+
+        //Boolean - Whether the scale should begin at zero
+        scaleBeginAtZero: true,
+
+        //String - Point label font declaration
+        pointLabelFontFamily: "'Arial'",
+
+        //String - Point label font weight
+        pointLabelFontStyle: "normal",
+
+        //Number - Point label font size in pixels
+        pointLabelFontSize: 10,
+
+        //String - Point label font colour
+        pointLabelFontColor: "#666",
+
+        //Boolean - Whether to show a stroke for datasets
+        datasetStroke: true,
+
+        //Boolean - Whether to fill the dataset with a colour
+        datasetFill: true,
+
+        //String - A legend template
+        legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+
+    }
 
 var newBarChart = new Chart(ctx).Bar(data, options);
 
