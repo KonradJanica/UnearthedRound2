@@ -1,0 +1,13 @@
+<template name="image">
+    <li class="list-group-item">
+        <img class="img-responsive" src="{{this.url}}">
+        <div class="imageMetaData">
+        {{#if this.metadata.tags}}
+            <p><strong>Tags: </strong>{{this.metadata.tags}}</p>
+        {{/if}}
+        {{#if this.metadata.description}}
+            <p><strong>Description: </strong>{{this.metadata.description}}</p>
+        {{/if}}
+        </div>
+    </li> 
+</template>

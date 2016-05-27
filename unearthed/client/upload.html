@@ -1,0 +1,11 @@
+<template name="upload">
+    <form class="upload-task">
+        Tags: <input type="text" name="tag">
+        Description: <input type="text" name="description">
+        <input type="file" id="imageUpload">
+        <input type="submit">
+    </form>
+    {{#if errorMessage}}
+        <div class="upload-error">{{errorMessage}}</div>
+    {{/if}}
+</template>

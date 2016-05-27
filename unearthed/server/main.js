@@ -1,5 +1,11 @@
 import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(() => {
-  // code to run on server at startup
+    // Setup images
+    images.allow({
+        insert:function(){return true;},
+    });
+    Meteor.publish('images',function(){
+        return images.find();
+    });
 });
