@@ -87,6 +87,10 @@ function snapshot() {
     });
 
     ajax(image);
+
+    var data = { "min1":0.3, "min2":0.4, "min3":0.1, "min4":0.1, "min5":0.1};
+
+    graphData(data);
 }
 
 function ajax(image) {
@@ -110,6 +114,12 @@ function ajax(image) {
 function getBase64Image(imgUrl) {
     return imgUrl.replace(/^data:image\/(png|jpg);base64,/, "");
 }
-// var sly = function(){
-//     console.log("test","public call");
-// }
+
+function graphData(keyValueData) {
+    for (var key in keyValueData) {
+        console.log(key + " : " + keyValueData[key]);
+    }
+    data.datasets.data = keyValueData;
+    console.log(data);
+    newBarChart.update();
+}

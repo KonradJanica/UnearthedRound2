@@ -1,22 +1,24 @@
+data = {
+    labels: ["", "", "", "", ""],
+    datasets: [
+        {
+            label: "My First dataset",
+            backgroundColor: "rgba(255,99,132,0.2)",
+            borderColor: "rgba(255,99,132,1)",
+            borderWidth: 1,
+            hoverBackgroundColor: "rgba(255,99,132,0.4)",
+            hoverBorderColor: "rgba(255,99,132,1)",
+            data: [0, 0, 0, 0, 0],
+        }
+    ]
+};
+
+newBarChart = null;
+
 Template.barChart.onRendered(function() {
 
 var ctx = document.getElementById("resultBarChart").getContext("2d");
 
-var data = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
-    datasets: [
-        {
-            label: "My First dataset",
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
-            data: [65, 59, 80, 81, 56, 55, 40],
-        }
-    ]
-};
 
     var options = {
         //Boolean - Whether the site is responsive
@@ -50,6 +52,11 @@ var data = {
         datasetFill: true,
     };
 
-var newBarChart = new Chart(ctx).Bar(data, options);
+    //newBarChart = new Chart(ctx).Bar(data, options);
+    newBarChart = new Chart(ctx, {
+        type: 'bar',
+        data: data,
+        options: null
+    });
 
 });
