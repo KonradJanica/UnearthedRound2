@@ -51,12 +51,52 @@
 
 /* --- DATA --- */
 
+.chartRow {
+    height: auto;
+}
+
+#resultBarChart {
+    margin-top: 20%;
+}
+
+/* --- CAMERA OVERLAY --- */
+
 #videoElement {
     width: 100%;
     height: 100%;
-    background-color: #666;
+    background-color: #000;
+}
+
+#embeddedVideoElement {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+#centerTakePhoto {
+    position: absolute;
+    left: 50%;
+    top: 80%;
 }
 
 #takePhoto {
-    position: fixed;
+    position: relative;
+    left: -50%;
+    color: white;
+}
+
+#openOverlay {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    height: 15%;
+    width: 15%;
+}
+
+#closeOverlay {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    height: 15%;
+    width: 10%;
 }
