@@ -1,3 +1,23 @@
+/* --- PAGE --- */
+
+.page-container{
+    background-color: blue;
+    width:100%;
+}
+
+/* --- HEADER --- */
+
+.header-container{
+    background-color: red;
+}
+
+/* --- COLLECTION --- */
+
+.collection-container{
+    background-color:grey;
+    height:200px;
+}
+
 .imageMetaData p {
     margin: 0;
     padding: 0;
@@ -8,6 +28,8 @@
     height: 300px;
     overflow: auto;
 }
+
+/* --- DATA --- */
 
 #videoElement {
     width: 100%;
