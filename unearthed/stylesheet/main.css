@@ -7,8 +7,13 @@
 
 /* --- HEADER --- */
 
+.header-text{
+    text-align:center;
+}
+
 .header-container{
     background-color: #336699;
+    color:#ccc;
 }
 
 /* --- COLLECTION --- */
@@ -17,6 +22,7 @@
     margin: 0;
     position: relative;
     cursor: default;
+    padding-bottom:4px;
 }
 
 
@@ -27,7 +33,6 @@
     height:  50px;
     width:  50px;
     cursor: pointer;
-    background-color:red;
 }
 
 .image-small{
@@ -46,7 +51,7 @@
 
 
 #basic{
-    background-color: #333FFF;
+    background-color: #CCC;
     line-height:0px;
 }
 
