@@ -20,7 +20,6 @@ html, body{
 }
 
 .box .flexrow {
-    border: 1px dotted grey;
     flex: 0 1 1px;
 }
 
