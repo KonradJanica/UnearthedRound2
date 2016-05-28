@@ -25,7 +25,7 @@ Template.body.events({
 });
 
 Template.webcam.events({
-    'click #takePhoto': function () {
+    'click #videoElement': function () {
         nOverlay.remove();
     }
 });           
