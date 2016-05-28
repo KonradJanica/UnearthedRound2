@@ -19,12 +19,14 @@ Template.upload.events({
     }
 });
 
+sly = null;
+
 Template.image.rendered = function(){
     (function() {
         var $frame = $('#basic');
         var $slidee = $frame.children('ul').eq(0);
         var $wrap = $frame.parent();
-        var sly = new Sly($frame, {
+        sly = new Sly($frame, {
             horizontal: 1,
             itemNav: 'basic',
             smart: 1,
@@ -51,7 +53,6 @@ Template.image.rendered = function(){
             next: $wrap.find('.next'),
             prevPage: $wrap.find('.prevPage'),
             nextPage: $wrap.find('.nextPage')
-        });
-        sly.init();
+        }).init();
     }());
 }

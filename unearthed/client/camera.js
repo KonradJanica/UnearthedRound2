@@ -35,31 +35,31 @@ Template.webcam.events({
 
         $("#videoElement").fadeOut().fadeIn();
     }
-});           
+});
 
 Template.embedWebcam.events({
     'click .border': function () {
-        var imageOverlay = document.querySelector("#displaySavedPic");
-        if (imageOverlay.style.visibility === "hidden") {
-            snapshot();
-            // Blink animation
-            $("#embeddedVideoElement").fadeOut().fadeIn();
-        }
+        //Take a photo
+        snapshot();
+        sly.reload();
+        sly.toEnd();
+
+        $("#embeddedVideoElement").fadeOut().fadeIn();
     }
-});           
+});
 
 Template.webcam.events({
     'click #closeOverlay': function () {
         nOverlay.remove();
     }
-});           
+});
 
 function snapshot() {
     var canvas = document.createElement("canvas");
     canvas.width = embeddedVideo.videoWidth;
     canvas.height = embeddedVideo.videoHeight;
     canvas.getContext("2d").drawImage(embeddedVideo, 0, 0);
-    
+
     fsFile = new FS.File(canvas.toDataURL('image/png', 1.0));
 
     images.insert(fsFile, function(err) {
@@ -68,3 +68,6 @@ function snapshot() {
         } 
     });
 }
+// var sly = function(){
+//     console.log("test","public call");
+// }
