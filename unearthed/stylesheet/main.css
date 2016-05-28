@@ -31,12 +31,21 @@
 
 /* --- DATA --- */
 
+/* --- CAMERA OVERLAY --- */
+
 #videoElement {
     width: 100%;
     height: 100%;
     background-color: #666;
 }
 
-#takePhoto {
+#centerTakePhoto {
     position: fixed;
+    left: 50%;
+    top: 80%;
+}
+
+#takePhoto {
+    position: relative;
+    left: -50%;
 }
