@@ -17,6 +17,7 @@ Template.embedWebcam.onRendered(function() {
             // do something
         }
 
+        document.querySelector("#displaySavedPic").style.visibility = "hidden";
 });
 
 Template.body.events({
