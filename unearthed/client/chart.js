@@ -20,7 +20,9 @@ Template.barChart.onRendered(function() {
 var ctx = document.getElementById("resultBarChart").getContext("2d");
 
     var options = {
-        responsive: true,
+        legend: {
+            display: false,
+        }
     };
 
     newBarChart = new Chart(ctx, {
