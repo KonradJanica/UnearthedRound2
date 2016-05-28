@@ -17,19 +17,27 @@ Template.embedWebcam.onRendered(function() {
             // do something
         }
 
+        document.querySelector("#displaySavedPic").style.visibility = "hidden";
 });
 
 Template.body.events({
     'click #openOverlay': function () {
-        nOverlay.create('webcam');
+        if (document.querySelector("#displaySavedPic").style.visibility === "hidden") {
+            nOverlay.create("webcam");
 
-        var video = document.querySelector("#videoElement");
-        video.src = embeddedVideo.src;
+            var video = document.querySelector("#videoElement");
+            video.src = embeddedVideo.src;
+        } else {
+            nOverlay.create("pictureFullscreen");
+
+            var video = document.querySelector("#videoElement");
+            video.src = document.querySelector("#displaySavedPic").src;
+        }
     }
 });
 
 Template.webcam.events({
-    'click .border': function () {
+    'click .snapPhoto': function () {
         //Take a photo
         snapshot();
 
@@ -38,17 +46,25 @@ Template.webcam.events({
 });
 
 Template.embedWebcam.events({
-    'click .border': function () {
-        //Take a photo
-        snapshot();
-        sly.reload();
-        sly.toEnd();
-
-        $("#embeddedVideoElement").fadeOut().fadeIn();
+    'click .snapPhoto': function () {
+        if (document.querySelector("#displaySavedPic").style.visibility === "hidden") {
+            //Take a photo
+            snapshot();
+            sly.reload();
+            sly.toEnd();
+    
+            $("#embeddedVideoElement").fadeOut().fadeIn();
+        }
     }
 });
 
 Template.webcam.events({
+    'click #closeOverlay': function () {
+        nOverlay.remove();
+    }
+});
+
+Template.pictureFullscreen.events({
     'click #closeOverlay': function () {
         nOverlay.remove();
     }

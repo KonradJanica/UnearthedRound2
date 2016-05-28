@@ -1,6 +1,6 @@
 <template name="webcam">
     <div id="fullscreen">
-        <div class="border">
+        <div class="snapPhoto border">
             <video autoplay="true" id="videoElement">
             </video>
         </div>
@@ -14,10 +14,10 @@
 </template>
 
 <template name="embedWebcam">
-    <div class="border">
+    <div class="snapPhoto border">
         <video autoplay="true" id="embeddedVideoElement">
         </video>
-        <input id="displaySavedPic" type="image"/>
+        <input id="displaySavedPic" type="image">
     </div>
 
      <div id="centerTakePhoto">
@@ -27,4 +27,12 @@
      </div>
 
      <input id="openOverlay" type="image" src="/images/expand.png"/>
+</template>
+
+<template name="pictureFullscreen">
+    <div id="fullscreen">
+        <img id="videoElement">
+
+        <input id="closeOverlay" type="image" src="/images/collapse.png"/>
+    </div>
 </template>
