@@ -15,7 +15,6 @@ boilerplate-generator@1.0.8
 caching-compiler@1.0.4
 caching-html-compiler@1.0.6
 callback-hook@1.0.8
-camera@1.4.1
 cfs:access-point@0.1.49
 cfs:base-package@0.0.30
 cfs:collection@0.5.5
