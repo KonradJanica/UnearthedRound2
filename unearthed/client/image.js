@@ -1,5 +1,8 @@
 Template.image.events({
-    'click': function () {
-        console.log("clicking pics");
+    'click': function (event) {
+
+        var imageOverlay = document.querySelector("#displaySavedPic");
+        imageOverlay.src = $(event.target).context.src;
+        imageOverlay.style.visibility = "visible";
     }
 });

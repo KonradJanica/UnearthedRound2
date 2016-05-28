@@ -39,10 +39,12 @@ Template.webcam.events({
 
 Template.embedWebcam.events({
     'click .border': function () {
-        //Take a photo
-        snapshot();
-
-        $("#embeddedVideoElement").fadeOut().fadeIn();
+        var imageOverlay = document.querySelector("#displaySavedPic");
+        if (imageOverlay.style.visibility === "hidden") {
+            snapshot();
+            // Blink animation
+            $("#embeddedVideoElement").fadeOut().fadeIn();
+        }
     }
 });           
 
