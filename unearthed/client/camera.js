@@ -19,7 +19,13 @@ Template.webcam.onRendered(function() {
         });
 
 Template.body.events({
-        'click #openOverlay': function () {
+    'click #openOverlay': function () {
         nOverlay.create('webcam');
-        }
-        });
+    }
+});
+
+Template.webcam.events({
+    'click #takePhoto': function () {
+        nOverlay.remove();
+    }
+});           
