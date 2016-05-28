@@ -3,17 +3,25 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <h1>HyperThumper</h1>
+    <div class="container page-container">
+        <div class="row header-container">
+            {{> header}}
+        </div>
 
+        <div class="row collection-container">
             {{> collection}}
+        </div>
+
+        <div class="row">
             {{> upload}}
+        </div>
 
+        <div class="row">
             {{> webcam}}
+        </div>
 
+        <div class="row">
             {{> barChart}}
-
         </div>
     </div>
 </body>
