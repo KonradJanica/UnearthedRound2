@@ -32,6 +32,7 @@ Template.webcam.events({
     'click #videoElement': function () {
         //nOverlay.remove();
         //Take a photo
+        snapshot();
     }
 });           
 
@@ -40,3 +41,20 @@ Template.webcam.events({
         nOverlay.remove();
     }
 });           
+
+function snapshot() {
+    var canvas = new Canvas();
+    var ctx = canvas.getContext('2d');
+    ctx.drawImage(embeddedVideo, 0, 0);
+    
+    fsFile = new FS.File();
+    fsFile.attachData(canvas.toDataURL('image/png'));
+
+    images.insert(fsFile, function(err) {
+        if (err) {
+            template.uploadError.set("Image upload failed, only PNG, JPG, GIF allowed");
+        } else {
+            template.uploadError.set("Image upload success");
+        }
+     })
+}
