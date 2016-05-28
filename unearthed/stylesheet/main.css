@@ -36,3 +36,7 @@
     height: 100%;
     background-color: #666;
 }
+
+#takePhoto {
+    position: fixed;
+}
