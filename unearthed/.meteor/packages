@@ -25,7 +25,6 @@ cfs:ui
 cfs:ejson-file
 accounts-ui
 accounts-password
-chart:chart
 noverlay
 sewdn:sly
 mrt:jquery-ui
