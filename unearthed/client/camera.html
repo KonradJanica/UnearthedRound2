@@ -1,11 +1,13 @@
 <template name="webcam">
-    <div class="row" id="fullscreen">
+    <div id="fullscreen">
         <video autoplay="true" id="videoElement">
         </video>
 
         <div id="centerTakePhoto">
             <div id="takePhoto"> Click to take photo </div>
         </div>
+
+        <input id="closeOverlay" type="image" src="/images/collapse.png"/>
     </div>
 </template>
 
@@ -14,6 +16,10 @@
     </video>
 
      <div id="centerTakePhoto">
-        <div id="takePhoto"> Click to take photo </div>
+        <div id="takePhoto"> 
+            Click to take photo
+        </div>
      </div>
+
+     <input id="openOverlay" type="image" src="/images/expand.png"/>
 </template>

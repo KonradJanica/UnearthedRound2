@@ -71,3 +71,19 @@
     left: -50%;
     color: white;
 }
+
+#openOverlay {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    height: 15%;
+    width: 15%;
+}
+
+#closeOverlay {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    height: 15%;
+    width: 10%;
+}

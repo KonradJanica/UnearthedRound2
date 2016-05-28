@@ -17,7 +17,7 @@ Template.embedWebcam.onRendered(function() {
             // do something
         }
 
-        });
+});
 
 Template.body.events({
     'click #openOverlay': function () {
@@ -30,6 +30,13 @@ Template.body.events({
 
 Template.webcam.events({
     'click #videoElement': function () {
+        //nOverlay.remove();
+        //Take a photo
+    }
+});           
+
+Template.webcam.events({
+    'click #closeOverlay': function () {
         nOverlay.remove();
     }
 });           
