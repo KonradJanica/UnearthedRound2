@@ -17,3 +17,9 @@ Template.webcam.onRendered(function() {
         }
 
         });
+
+Template.body.events({
+        'click #openOverlay': function () {
+        nOverlay.create('webcam');
+        }
+        });
