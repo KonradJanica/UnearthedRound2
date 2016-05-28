@@ -1,8 +1,37 @@
 /* --- PAGE --- */
 
+html, body{
+    height: 100%;
+    margin: 0;
+}
+
 .page-container{
-    background-color: rgb(210,200,204);
+    background-color: #ccc;
     width:100%;
+    height:100%;
+}
+
+.box {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.box .flexrow {
+    border: 1px dotted grey;
+    flex: 0 1 30px;
+}
+
+.box .flexrow.header {
+    flex: 0 1 auto;
+}
+
+.box .flexrow.content {
+    flex: 1 1 auto;
+}
+
+.box .flexrow.footer {
+    flex: 0 1 40px;
 }
 
 /* --- HEADER --- */
@@ -22,7 +51,7 @@
     margin: 0;
     position: relative;
     cursor: default;
-    padding-bottom:4px;
+    padding-bottom:1px;
 }
 
 
@@ -49,10 +78,6 @@
     margin: 1px;
 }
 
-.collection-container{
-    /* background-color:grey; */
-}
-
 
 #basic{
     background-color: #333;
@@ -77,7 +102,8 @@
 /* --- DATA --- */
 
 .chartRow {
-    height: auto;
+    height: 100%;
+    background-color:red;
 }
 
 #resultBarChart {
@@ -157,4 +183,11 @@
 
 .border:hover::after {
     box-shadow: inset 0 0 0 10px rgba(255,255,255,.5);
+}
+
+.webcam-container{
+    height:100%;
+    background-color:blue;
+    margin:0;
+    padding:0;
 }

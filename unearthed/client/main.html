@@ -4,25 +4,22 @@
 
 <body>
     <div class="container page-container">
-        <div class="row header-container">
-            {{> header}}
-        </div>
-
-        <div class="row collection-container">
-            {{> collection}}
-        </div>
-
-
-        <!-- <div class="row"> -->
-        <!--     {{> upload}} -->
-        <!-- </div> -->
-
-        <div class="row chartRow">
-            <div class="col-sm-6">
-                {{> barChart}}
+        <div class="box">
+            <div class="row header-container">
+                {{> header}}
             </div>
-            <div class="col-sm-6">
-                {{> embedWebcam}}
+
+            <div class="row collection-container">
+                {{> collection}}
+            </div>
+
+            <div class="flexrow content row chartRow">
+                <div class="col-xs-6">
+                    {{> barChart}}
+                </div>
+                <div class="col-xs-6 webcam-container">
+                    {{> embedWebcam}}
+                </div>
             </div>
         </div>
     </div>
