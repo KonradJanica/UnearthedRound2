@@ -61,7 +61,7 @@
 }
 
 #centerTakePhoto {
-    position: fixed;
+    position: absolute;
     left: 50%;
     top: 80%;
 }
