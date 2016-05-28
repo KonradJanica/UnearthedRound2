@@ -21,6 +21,7 @@ Template.embedWebcam.onRendered(function() {
 
 Template.body.events({
     'click #openOverlay': function () {
+        
         nOverlay.create('webcam');
 
         var video = document.querySelector("#videoElement");
@@ -39,12 +40,14 @@ Template.webcam.events({
 
 Template.embedWebcam.events({
     'click .border': function () {
-        //Take a photo
-        snapshot();
-        sly.reload();
-        sly.toEnd();
-
-        $("#embeddedVideoElement").fadeOut().fadeIn();
+        if (document.querySelector("#displaySavedPic").style.visibility === "hidden") {
+            //Take a photo
+            snapshot();
+            sly.reload();
+            sly.toEnd();
+    
+            $("#embeddedVideoElement").fadeOut().fadeIn();
+        }
     }
 });
 
