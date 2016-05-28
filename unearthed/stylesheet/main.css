@@ -23,17 +23,12 @@ html, body{
     flex: 0 1 1px;
 }
 
-.box .flexrow.header {
-    flex: 0 1 auto;
-}
 
 .box .flexrow.content {
     flex: 1 1 auto;
+    flex-shrink: 2;
 }
 
-.box .flexrow.footer {
-    flex: 0 1 40px;
-}
 
 /* --- HEADER --- */
 
@@ -220,7 +215,7 @@ html, body{
 }
 
 .webcam-container{
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     position:absolute;
@@ -232,7 +227,7 @@ html, body{
     padding:0 !important;
 }
 
-.snapPhoto, #embeddedVideoElement{
-    margin:0;
-    padding:0 !important;
+.snapPhoto{
+    margin: 0 !important;
+    padding: 0 !important;
 }
