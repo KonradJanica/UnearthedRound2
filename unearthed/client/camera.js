@@ -37,7 +37,7 @@ Template.body.events({
 });
 
 Template.webcam.events({
-    'click .border': function () {
+    'click .snapPhoto': function () {
         //Take a photo
         snapshot();
 
@@ -46,7 +46,7 @@ Template.webcam.events({
 });
 
 Template.embedWebcam.events({
-    'click .border': function () {
+    'click .snapPhoto': function () {
         if (document.querySelector("#displaySavedPic").style.visibility === "hidden") {
             //Take a photo
             snapshot();
