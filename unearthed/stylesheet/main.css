@@ -1,21 +1,24 @@
 /* --- PAGE --- */
 
 .page-container{
-    background-color: blue;
+    background-color: rgb(210,200,204);
     width:100%;
 }
 
 /* --- HEADER --- */
 
 .header-container{
-    background-color: red;
+    background-color: #336699;
 }
 
 /* --- COLLECTION --- */
 
 .collection-container{
-    background-color:grey;
-    height:200px;
+    /* background-color:grey; */
+}
+
+.image-container{
+    margin:0;
 }
 
 .imageMetaData p {
@@ -27,6 +30,10 @@
     width: 300px;
     height: 300px;
     overflow: auto;
+}
+
+.slider-casing{
+    margin:0;
 }
 
 /* --- DATA --- */

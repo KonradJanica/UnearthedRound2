@@ -75,6 +75,7 @@ modules-runtime@0.6.3
 mongo@1.1.7
 mongo-id@1.0.4
 mongo-livedata@1.0.12
+mrt:jquery-ui@1.9.2
 noverlay@0.1.0
 npm-bcrypt@0.8.5
 npm-mongo@1.4.43
@@ -91,6 +92,7 @@ retry@1.0.7
 routepolicy@1.0.10
 service-configuration@1.0.9
 session@1.1.5
+sewdn:sly@1.6.1
 sha@1.0.7
 spacebars@1.0.11
 spacebars-compiler@1.0.11
