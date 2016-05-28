@@ -21,11 +21,17 @@ Template.embedWebcam.onRendered(function() {
 
 Template.body.events({
     'click #openOverlay': function () {
-        
-        nOverlay.create('webcam');
+        if (document.querySelector("#displaySavedPic").style.visibility === "hidden") {
+            nOverlay.create("webcam");
 
-        var video = document.querySelector("#videoElement");
-        video.src = embeddedVideo.src;
+            var video = document.querySelector("#videoElement");
+            video.src = embeddedVideo.src;
+        } else {
+            nOverlay.create("pictureFullscreen");
+
+            var video = document.querySelector("#videoElement");
+            video.src = document.querySelector("#displaySavedPic").src;
+        }
     }
 });
 
@@ -52,6 +58,12 @@ Template.embedWebcam.events({
 });
 
 Template.webcam.events({
+    'click #closeOverlay': function () {
+        nOverlay.remove();
+    }
+});
+
+Template.pictureFullscreen.events({
     'click #closeOverlay': function () {
         nOverlay.remove();
     }
