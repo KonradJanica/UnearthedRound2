@@ -29,10 +29,20 @@ Template.body.events({
 });
 
 Template.webcam.events({
-    'click #videoElement': function () {
-        //nOverlay.remove();
+    'click .border': function () {
         //Take a photo
         snapshot();
+
+        $("#videoElement").fadeOut().fadeIn();
+    }
+});           
+
+Template.embedWebcam.events({
+    'click .border': function () {
+        //Take a photo
+        snapshot();
+
+        $("#embeddedVideoElement").fadeOut().fadeIn();
     }
 });           
 
@@ -43,7 +53,7 @@ Template.webcam.events({
 });           
 
 function snapshot() {
-    var canvas = new Canvas();
+    var canvas = document.createElement('canvas');
     var ctx = canvas.getContext('2d');
     ctx.drawImage(embeddedVideo, 0, 0);
     
