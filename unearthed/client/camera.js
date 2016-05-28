@@ -73,11 +73,13 @@ function snapshot() {
     ajax(image);
 }
 
-function ajax(imageData) {
+function ajax(image) {
     $.ajax({
         url: "http://192.168.48.73:5000/api/predict/",
         type: "POST",
-        image: imageData,
+        data: JSON.stringify({'image':getBase64Image(image)}),
+        processData: false,
+        contentType: "application/json; charset=UTF-8",
         success:function(data){
             console.log("success");
             console.log(data);
