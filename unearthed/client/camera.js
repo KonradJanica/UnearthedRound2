@@ -1,6 +1,7 @@
-Template.webcam.onRendered(function() {
+var embeddedVideo = null;
 
-        var video = document.querySelector("#videoElement");
+Template.embedWebcam.onRendered(function() {
+        embeddedVideo = document.querySelector("#embeddedVideoElement");
 
         navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
 
@@ -9,7 +10,7 @@ Template.webcam.onRendered(function() {
         }
 
         function handleVideo(stream) {
-            video.src = window.URL.createObjectURL(stream);
+            embeddedVideo.src = window.URL.createObjectURL(stream);
         }
 
         function videoError(e) {
@@ -21,6 +22,9 @@ Template.webcam.onRendered(function() {
 Template.body.events({
     'click #openOverlay': function () {
         nOverlay.create('webcam');
+
+        var video = document.querySelector("#videoElement");
+        video.src = embeddedVideo.src;
     }
 });
 
