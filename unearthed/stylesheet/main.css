@@ -13,6 +13,23 @@
 
 /* --- COLLECTION --- */
 
+.image-container{
+    margin: 0;
+    position: relative;
+    cursor: default;
+}
+
+
+.camera-icon{
+    position: absolute;
+    right:10px;
+    top: 50px;
+    height:  50px;
+    width:  50px;
+    cursor: pointer;
+    background-color:red;
+}
+
 .image-small{
     max-width:100%;
     max-height:100%;
@@ -26,9 +43,6 @@
     /* background-color:grey; */
 }
 
-.image-container{
-    margin: 0;
-}
 
 #basic{
     background-color: #333FFF;
