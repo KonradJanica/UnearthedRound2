@@ -1,7 +1,9 @@
 <template name="webcam">
     <div id="fullscreen">
+        <div class="border">
         <video autoplay="true" id="videoElement">
         </video>
+        </div>
 
         <div id="centerTakePhoto">
             <div id="takePhoto"> Click to take photo </div>
@@ -12,8 +14,10 @@
 </template>
 
 <template name="embedWebcam">
+    <div class="border">
     <video autoplay="true" id="embeddedVideoElement">
     </video>
+    </div>
 
      <div id="centerTakePhoto">
         <div id="takePhoto"> 
