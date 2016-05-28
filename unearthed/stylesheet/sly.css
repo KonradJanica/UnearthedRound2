@@ -18,7 +18,7 @@ body {
 /* Frame */
 
 .frame {
-  height: 250px;
+  height: 150px;
   line-height: 250px;
   overflow: hidden;
 }
@@ -35,7 +35,7 @@ body {
   float: left;
   width: 227px;
   height: 100%;
-  margin: 0 1px 0 0;
+  margin: 0 0 0 0;
   padding: 0;
   background: #333;
   color: #ddd;
