@@ -53,18 +53,16 @@ Template.webcam.events({
 });           
 
 function snapshot() {
-    var canvas = document.createElement('canvas');
-    var ctx = canvas.getContext('2d');
-    ctx.drawImage(embeddedVideo, 0, 0);
+    var canvas = document.createElement("canvas");
+    canvas.width = embeddedVideo.videoWidth;
+    canvas.height = embeddedVideo.videoHeight;
+    canvas.getContext("2d").drawImage(embeddedVideo, 0, 0);
     
-    fsFile = new FS.File();
-    fsFile.attachData(canvas.toDataURL('image/png'));
+    fsFile = new FS.File(canvas.toDataURL('image/png', 1.0));
 
     images.insert(fsFile, function(err) {
         if (err) {
-            template.uploadError.set("Image upload failed, only PNG, JPG, GIF allowed");
-        } else {
-            template.uploadError.set("Image upload success");
-        }
-     })
+            console.log("Image upload failed, only PNG, JPG, GIF allowed");
+        } 
+    });
 }
