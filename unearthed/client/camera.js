@@ -88,7 +88,7 @@ function snapshot() {
 
     ajax(image);
 
-    var data = { "min1":0.3, "min2":0.4, "min3":0.1, "min4":0.1, "min5":0.1};
+    var data = { "min1":Math.random(), "min2":Math.random(), "min3":Math.random(), "min4":Math.random(), "min5":Math.random()};
 
     graphData(data);
 }
@@ -116,10 +116,11 @@ function getBase64Image(imgUrl) {
 }
 
 function graphData(keyValueData) {
+    var i = 0;
     for (var key in keyValueData) {
-        console.log(key + " : " + keyValueData[key]);
+        data.labels[i] = key;
+        data.datasets[0].data[i] = keyValueData[key];
+        ++i;
     }
-    data.datasets.data = keyValueData;
-    console.log(data);
     newBarChart.update();
 }
