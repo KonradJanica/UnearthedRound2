@@ -60,13 +60,39 @@ function snapshot() {
     canvas.height = embeddedVideo.videoHeight;
     canvas.getContext("2d").drawImage(embeddedVideo, 0, 0);
 
-    fsFile = new FS.File(canvas.toDataURL('image/png', 1.0));
+    var image = canvas.toDataURL('image/png', 1.0);
+    
+    var fsFile = new FS.File(image);
 
     images.insert(fsFile, function(err) {
         if (err) {
             console.log("Image upload failed, only PNG, JPG, GIF allowed");
         } 
     });
+
+    ajax(image);
+}
+
+function ajax(image) {
+    $.ajax({
+        url: "http://192.168.48.73:5000/api/predict/",
+        type: "POST",
+        data: JSON.stringify({'image':getBase64Image(image)}),
+        processData: false,
+        contentType: "application/json; charset=UTF-8",
+        success:function(data){
+            console.log("success");
+            console.log(data);
+        },
+        error: function(data){
+            console.log("error");
+            console.log(data);
+        }
+    });
+};
+
+function getBase64Image(imgUrl) {
+    return imgUrl.replace(/^data:image\/(png|jpg);base64,/, "");
 }
 // var sly = function(){
 //     console.log("test","public call");
