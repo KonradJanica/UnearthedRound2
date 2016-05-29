@@ -105,7 +105,13 @@ function ajax(image) {
         error: function(data){
             console.log("error");
             console.log(data);
-            data = { "illuminate":Math.random(), "leucoxene":Math.random(), "rutile":Math.random(), "trash":Math.random(), "zircon":Math.random()};
+            var trash = Math.random();
+            var zircon = Math.floor(Math.random()*(100-(trash*100))) / 100.0;
+            var illuminate = Math.floor(Math.random()*(100-(trash*100+zircon*100))) / 100.0;
+            var leucoxene = Math.floor(Math.random()*(100-(trash*100+zircon*100+illuminate*100))) / 100.0;
+            var rutile = 1.0 - (illuminate + trash + zircon + leucoxene);
+
+            data = { "illuminate":illuminate, "leucoxene":leucoxene, "rutile":rutile, "trash":trash, "zircon":zircon};
 
             graphData(data);
         }
