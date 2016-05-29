@@ -111,7 +111,7 @@ function ajax(image) {
             var leucoxene = Math.floor(Math.random()*(100-(trash*100+zircon*100+illuminate*100))) / 100.0;
             var rutile = 1.0 - (illuminate + trash + zircon + leucoxene);
 
-            data = { "illuminate":illuminate, "leucoxene":leucoxene, "rutile":rutile, "trash":trash, "zircon":zircon};
+            data = { "ilmenite":illuminate, "leucoxene":leucoxene, "rutile":rutile, "trash":trash, "zircon":zircon};
 
             graphData(data);
         }
