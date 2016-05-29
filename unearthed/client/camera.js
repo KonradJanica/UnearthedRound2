@@ -125,13 +125,15 @@ function getBase64Image(imgUrl) {
 function graphData(keyValueData) {
     var i = 0;
     for (var key in keyValueData) {
-        if (key !== "trash") {
+        if (key === "leucoxene") {
+        }
+        else if (key !== "trash") {
             data.labels[i] = key;
             data.datasets[0].data[i] = keyValueData[key];
             ++i;
         } else {
             var trashDiv = document.querySelector("#trashText");
-            trashDiv.innerHTML = "trash: " + keyValueData[key];
+            trashDiv.innerHTML = "trash: " + (keyValueData[key]*100).toPrecision(4) + "%";
         }
     }
     newBarChart.update();
