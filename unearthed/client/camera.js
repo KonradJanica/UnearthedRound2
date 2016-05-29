@@ -71,10 +71,11 @@ Template.pictureFullscreen.events({
 });
 
 function snapshot() {
+    var img = document.querySelector("#mockImg");
     var canvas = document.createElement("canvas");
-    canvas.width = embeddedVideo.videoWidth;
-    canvas.height = embeddedVideo.videoHeight;
-    canvas.getContext("2d").drawImage(embeddedVideo, 0, 0);
+    canvas.width = 2048;
+    canvas.height = 1638;
+    canvas.getContext("2d").drawImage(img, 0, 0);
 
     var image = canvas.toDataURL('image/png', 1.0);
     
@@ -88,9 +89,7 @@ function snapshot() {
 
     ajax(image);
 
-    var data = { "min1":Math.random(), "min2":Math.random(), "min3":Math.random(), "min4":Math.random(), "min5":Math.random()};
 
-    graphData(data);
 }
 
 function ajax(image) {
@@ -103,10 +102,13 @@ function ajax(image) {
         success:function(data){
             console.log("success");
             console.log(data);
+            graphData(data);
         },
         error: function(data){
             console.log("error");
             console.log(data);
+            var data = { "min1":Math.random(), "min2":Math.random(), "min3":Math.random(), "min4":Math.random(), "min5":Math.random()};
+            graphData(data);
         }
     });
 };
