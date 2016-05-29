@@ -233,3 +233,8 @@ html, body{
     margin: 0 !important;
     padding: 0 !important;
 }
+
+#trashText {
+    margin-left: 8%;
+    margin-top: 10%;
+}

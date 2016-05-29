@@ -87,10 +87,6 @@ function snapshot() {
     });
 
     ajax(image);
-
-    var data = { "min1":Math.random(), "min2":Math.random(), "min3":Math.random(), "min4":Math.random(), "min5":Math.random()};
-
-    graphData(data);
 }
 
 function ajax(image) {
@@ -103,10 +99,15 @@ function ajax(image) {
         success:function(data){
             console.log("success");
             console.log(data);
+
+            graphData(data);
         },
         error: function(data){
             console.log("error");
             console.log(data);
+            data = { "illuminate":Math.random(), "leucoxene":Math.random(), "rutile":Math.random(), "trash":Math.random(), "zircon":Math.random()};
+
+            graphData(data);
         }
     });
 };
@@ -118,9 +119,14 @@ function getBase64Image(imgUrl) {
 function graphData(keyValueData) {
     var i = 0;
     for (var key in keyValueData) {
-        data.labels[i] = key;
-        data.datasets[0].data[i] = keyValueData[key];
-        ++i;
+        if (key !== "trash") {
+            data.labels[i] = key;
+            data.datasets[0].data[i] = keyValueData[key];
+            ++i;
+        } else {
+            var trashDiv = document.querySelector("#trashText");
+            trashDiv.innerHTML = "trash: " + keyValueData[key];
+        }
     }
     newBarChart.update();
 }
