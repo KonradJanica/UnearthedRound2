@@ -133,7 +133,7 @@ function graphData(keyValueData) {
             ++i;
         } else {
             var trashDiv = document.querySelector("#trashText");
-            trashDiv.innerHTML = "trash: " + (keyValueData[key]*100).toPrecision(4) + "%";
+            trashDiv.innerHTML = "Trash: " + (keyValueData[key]*100).toPrecision(4) + "%";
         }
     }
     newBarChart.update();
